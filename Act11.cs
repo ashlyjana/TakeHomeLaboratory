@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +21,17 @@ namespace Act11
                 Console.Write($"Enter age {i + 1}: ");
                 string input = Console.ReadLine();
                 int age = int.Parse(input);
+                if (age < 0 || age > 120)
+                {
+                    Console.WriteLine("Invalid age!");
+                    i--; 
+                    continue;
+                }
+
                 ages[i] = age;
             }
 
-            Console.WriteLine("\nVoter Eligibility and Categorization:");
+            Console.WriteLine("\nVoter and Categorization:");
 
             for (int i = 0; i < 10; i++)
             {
@@ -42,7 +49,7 @@ namespace Act11
                 {
                     Console.WriteLine("Mid-age Voter");
                 }
-                else
+                else 
                 {
                     Console.WriteLine("Senior Voter");
                 }
